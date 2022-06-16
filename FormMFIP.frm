@@ -22,7 +22,9 @@ Private Type OPENFILENAME
     lpfnHook As Long
     lpTemplateName As String
 End Type
+
 Dim OFName As OPENFILENAME
+
 Private Function ShowSave(filter) As String
     OFName.lStructSize = Len(OFName)
     OFName.hwndOwner = Me.hWnd
@@ -41,6 +43,7 @@ Private Function ShowSave(filter) As String
         Exit Function
     End If
 End Function
+
 Private Function ShowOpen(filter, text)
     OFName.lStructSize = Len(OFName)
     OFName.hwndOwner = Me.hWnd
@@ -59,6 +62,7 @@ Private Function ShowOpen(filter, text)
         Exit Function
     End If
 End Function
+
 Private Sub Command1_Click()
 On Error GoTo NotF
 If Text1.text = "" Then
@@ -118,4 +122,3 @@ Else
 Cancel = True
 End If
 End Sub
-
